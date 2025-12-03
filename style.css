@@ -1,11 +1,12 @@
-/* --- RESET & BASICS --- */
+/* --- 1. CONFIGURACIÓN Y VARIABLES --- */
 :root {
-    --primary: #6366f1; /* Indigo vibrante */
-    --secondary: #a855f7; /* Púrpura */
+    --primary: #6366f1;
+    --secondary: #a855f7;
     --dark: #0f172a;
     --light: #f8fafc;
     --text-gray: #64748b;
     --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,9 +20,9 @@ body {
 }
 
 a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
+ul { list-style: none; } /* CORRECCIÓN: Quitamos el display grid de aquí */
 
-/* --- NAVBAR --- */
+/* --- 2. NAVEGACIÓN (NAVBAR) --- */
 nav {
     position: fixed;
     top: 0;
@@ -29,43 +30,56 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 15px 5%;
     z-index: 1000;
     transition: all 0.4s ease;
+    background: transparent; /* Transparente al inicio */
 }
 
-/* Estado del navbar al hacer scroll (se añade con JS) */
 nav.scrolled {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    padding: 15px 5%;
 }
 
 .logo { font-weight: 800; font-size: 1.5rem; color: #fff; }
 nav.scrolled .logo { color: var(--dark); }
+
 .highlight { color: var(--secondary); }
 
-.nav-links { display: flex; gap: 30px; align-items: center; }
+/* Estilos específicos para la lista del MENÚ */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 0; /* Asegura que no tenga márgenes extraños */
+}
+
+.nav-links li {
+    background: transparent; /* Asegura que no tenga fondo de tarjeta */
+    box-shadow: none; /* Sin sombras */
+    padding: 0;
+}
+
 .nav-links a { color: #fff; font-weight: 500; transition: 0.3s; }
 nav.scrolled .nav-links a { color: var(--dark); }
 
 .btn-nav {
     background: var(--gradient);
-    padding: 10px 25px;
+    padding: 10px 25px !important; /* Forzamos el padding del botón */
     border-radius: 50px;
     color: white !important;
     font-weight: 600;
 }
 .btn-nav:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
 
-/* --- HERO SECTION --- */
+/* --- 3. HERO SECTION (PORTADA) --- */
 #hero {
     height: 100vh;
     background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efecto Parallax simple */
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,111 +90,66 @@ nav.scrolled .nav-links a { color: var(--dark); }
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6));
 }
 
 .hero-content { position: relative; z-index: 2; max-width: 800px; }
 
-.badge {
-    background: rgba(255,255,255,0.1);
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 1px solid rgba(255,255,255,0.2);
-    display: inline-block;
-    margin-bottom: 20px;
-}
+h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+.badge { background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 50px; text-transform: uppercase; letter-spacing: 2px; border: 1px solid rgba(255,255,255,0.2); display: inline-block; margin-bottom: 20px; font-size: 0.8rem;}
 
-h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-#hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
-
-.cta-group { display: flex; gap: 15px; justify-content: center; }
-
-.btn-primary, .btn-secondary {
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.btn-primary { background: var(--gradient); color: white; border: none; }
+.cta-group { display: flex; gap: 15px; justify-content: center; margin-top: 30px;}
+.btn-primary { background: var(--gradient); color: white; padding: 15px 35px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4); }
-
-.btn-secondary { background: transparent; border: 2px solid white; color: white; }
+.btn-secondary { border: 2px solid white; color: white; padding: 15px 35px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
 .btn-secondary:hover { background: white; color: var(--dark); }
 
-/* --- SECTIONS GENERAL --- */
+/* --- 4. SECCIONES Y GRIDS --- */
 .section-padding { padding: 80px 20px; }
-.section-gray { background: #f1f5f9; }
 .container { max-width: 1100px; margin: 0 auto; }
 .section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--dark); }
 
-/* --- GRID FEATURES --- */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-
-.card-feature {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: 0.3s;
+/* AQUÍ APLICAMOS EL GRID SOLO A LAS TARJETAS DE CONTENIDO, NO AL MENÚ */
+.grid-3, .grid-recipes { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
 }
 
+/* --- 5. TARJETAS (CARDS) --- */
+.card-feature, .card-recipe {
+    background: white;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: var(--shadow-card);
+}
+
+/* Feature Cards */
+.card-feature { padding: 40px; text-align: center; }
 .card-feature:hover { transform: translateY(-10px); }
-.icon { font-size: 3rem; margin-bottom: 20px; background: #eef2ff; width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 20px auto; }
+.icon { font-size: 3rem; margin-bottom: 20px; }
 
-/* --- RECIPE CARDS --- */
-.header-flex { display: flex; justify-content: space-between; align-items: end; margin-bottom: 40px; }
-.link-arrow { color: var(--primary); font-weight: 600; }
-
-.grid-recipes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-
-.card-recipe {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-
-.card-recipe:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-
-.card-image { position: relative; height: 200px; overflow: hidden; }
+/* Recipe Cards */
+.card-recipe { overflow: hidden; }
+.card-recipe:hover { transform: translateY(-5px); }
+.card-image { height: 200px; overflow: hidden; position: relative; }
 .card-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 .card-recipe:hover img { transform: scale(1.1); }
-
-.tag {
-    position: absolute; top: 15px; right: 15px;
-    background: rgba(0,0,0,0.7); color: white;
-    padding: 5px 10px; border-radius: 10px; font-size: 0.8rem;
-}
-
 .card-info { padding: 25px; }
 .card-info h3 { font-size: 1.4rem; margin-bottom: 10px; }
-.btn-card { display: inline-block; margin-top: 15px; color: var(--primary); font-weight: 700; font-size: 0.9rem; }
+.tag { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 10px; font-size: 0.8rem; }
+.btn-card { display: inline-block; margin-top: 15px; color: var(--primary); font-weight: 700; }
 
-/* --- FOOTER --- */
+/* --- 6. FOOTER Y EXTRAS --- */
 footer { background: var(--dark); color: var(--text-gray); padding: 40px; text-align: center; }
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    .nav-links { display: none; } /* Ocultar menú en móvil para simplificar */
-    .header-flex { flex-direction: column; align-items: center; gap: 10px; }
-}
-
-/* --- ANIMACIONES DE SCROLL (CLASE 'VISIBLE' SE AÑADE CON JS) --- */
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive móvil */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .nav-links { display: none; } /* Ocultamos menú en móvil por simplicidad */
+    .hamburger { display: block; cursor: pointer; } 
+    /* Nota: Para menú móvil completo se requiere más JS, pero esto arregla el layout */
+}

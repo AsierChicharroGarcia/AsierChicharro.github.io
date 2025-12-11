@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://asierchicharrogarcia.github.io/AsierChicharro.github.io/index.html</loc>
+      <loc>https://asierchicharrogarcia.github.io/index.html</loc>
       <lastmod>2025-12-03</lastmod>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://asierchicharrogarcia.github.io/AsierChicharro.github.io/recetas/recetas.html</loc>
+      <loc>https://asierchicharrogarcia.github.io/recetas.html</loc>
       <lastmod>2025-12-03</lastmod>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://asierchicharrogarcia.github.io/AsierChicharro.github.io/recetas/batido-proteinas.html</loc>
+      <loc>https://asierchicharrogarcia.github.io/recetas/batido-proteinas.html</loc>
       <lastmod>2025-12-03</lastmod>
       <priority>0.6</priority>
    </url>
 </urlset>
+

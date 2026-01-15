@@ -9,40 +9,47 @@
     <link rel="icon" href="https://fav.farm/💪" />
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
-    <nav id="navbar" style="background: var(--dark); position: relative;">
+
+    <nav id="navbar" style="background: var(--dark); position: relative; z-index: 1000;">
         <div class="logo">Fit<span class="highlight">Fuel</span></div>
         <ul class="nav-links">
-            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.html" style="color: white; text-decoration: none;">Inicio</a></li>
             <li><a href="#" class="highlight">Consejos</a></li>
         </ul>
+        <div class="hamburger">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
     </nav>
 
-    <main style="flex: 1;">
+    <main style="flex: 1; padding-top: 20px;">
         <div class="container section-padding">
-            <nav style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-gray);">
-                <a href="../index.html">Inicio</a> > Consejos
+            
+            <nav style="margin-bottom: 40px; font-size: 0.9rem; color: #666;">
+                <a href="../index.html" style="color: var(--dark); text-decoration: none;">Inicio</a> <span style="margin: 0 10px;">></span> <strong>Consejos</strong>
             </nav>
 
-            <h1 style="text-align: center; margin-bottom: 20px; font-size: 2.5rem;">Consejos y Ciencia</h1>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto 50px auto; color: var(--text-gray);">Aprende a optimizar tus resultados con artículos basados en evidencia científica.</p>
+            <h1 style="text-align: center; margin-bottom: 20px; font-size: 3rem; font-weight: 800; color: var(--dark);">Consejos y Ciencia</h1>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 60px auto; color: #555; font-size: 1.1rem;">
+                Aprende a optimizar tus resultados con artículos basados en evidencia científica.
+            </p>
             
             <div class="grid-recipes">
-                <article class="card-recipe reveal visible">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500" alt="Ventana Anabólica">
-                        <span class="tag">Ciencia</span>
+                <article class="card-recipe reveal visible" style="box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden; background: white;">
+                    <div class="card-image" style="position: relative;">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500" alt="Ventana Anabólica" style="width: 100%; height: 250px; object-fit: cover;">
+                        <span class="tag" style="position: absolute; top: 15px; right: 15px; background: #333; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">Ciencia</span>
                     </div>
-                    <div class="card-info">
-                        <h3>La Ventana Anabólica</h3>
-                        <p>¿Es mito o realidad que debes comer en 30 minutos?</p>
-                        <a href="ventana-anabolica.html" class="btn-card">Leer artículo →</a>
+                    <div class="card-info" style="padding: 25px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">La Ventana Anabólica</h3>
+                        <p style="color: #666; margin-bottom: 20px;">¿Es mito o realidad que debes comer en 30 minutos?</p>
+                        <a href="ventana-anabolica.html" class="btn-card" style="color: var(--primary); font-weight: bold; text-decoration: none;">Leer artículo →</a>
                     </div>
                 </article>
             </div>
         </div>
     </main>
 
-    <footer style="margin-top: auto;">
+    <footer style="margin-top: auto; background: var(--dark); color: white; padding: 20px; text-align: center;">
         <p>© 2025 FitFuel Project. Optimizado para Google Search Console.</p>
     </footer>
 

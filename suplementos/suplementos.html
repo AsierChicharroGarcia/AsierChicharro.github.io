@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Suplementación | FitFuel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="https://fav.farm/💪" />
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://asierchicharrogarcia.github.io/index.html"
+      },{
+        "@type": "ListItem", "position": 2, "name": "Suplementos", "item": "https://asierchicharrogarcia.github.io/suplementos/suplementos.html"
+      }]
+    }
+    </script>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh; margin: 0; background-color: #f9f9f9;">
+
+    <nav id="navbar" style="background: var(--dark); position: sticky; top: 0; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo" style="color: white; font-weight: 700; font-size: 1.5rem;">Fit<span class="highlight" style="color: var(--primary);">Fuel</span></div>
+        <ul class="nav-links" style="display: flex; list-style: none; gap: 20px;">
+            <li><a href="../index.html" style="color: white; text-decoration: none;">Inicio</a></li>
+            <li><a href="#" class="highlight" style="color: var(--primary); font-weight: bold;">Suplementos</a></li>
+        </ul>
+        <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    </nav>
+
+    <main style="flex: 1; padding: 40px 20px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <div style="margin-bottom: 40px; font-size: 0.9rem; color: #666;">
+                <a href="../index.html" style="color: #333; text-decoration: none;">Inicio</a> > <strong>Suplementos</strong>
+            </div>
+
+            <h1 style="text-align: center; margin-bottom: 20px; font-size: 3rem; color: var(--dark); font-weight: 800;">Suplementación Deportiva</h1>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px auto;">Descubre qué suplementos funcionan realmente.</p>
+
+            <div class="grid-recipes" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <article class="card-recipe" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                    <div class="card-image" style="position: relative; height: 200px;">
+                        <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Proteínas" style="width: 100%; height: 100%; object-fit: cover;">
+                        <span class="tag" style="position: absolute; top: 10px; right: 10px; background: var(--primary); color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem;">Esencial</span>
+                    </div>
+                    <div class="card-info" style="padding: 25px;">
+                        <h3>Guía de Proteínas</h3>
+                        <p style="margin-bottom: 20px; color: #666;">Whey, Caseína, Vegana... ¿Cuál necesitas?</p>
+                        <a href="proteinas.html" class="btn-card" style="color: var(--primary); font-weight: bold; text-decoration: none;">Ver tipos →</a>
+                    </div>
+                </article>
+                
+                <article class="card-recipe" style="background: white; border-radius: 15px; overflow: hidden; opacity: 0.7;">
+                    <div class="card-image" style="height: 200px; background: #ddd; display: flex; align-items: center; justify-content: center;">
+                        <span style="color: #666;">Creatina (Próximamente)</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background: var(--dark); color: white; padding: 2rem; text-align: center; margin-top: auto;">
+        <p>© 2025 FitFuel Project.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

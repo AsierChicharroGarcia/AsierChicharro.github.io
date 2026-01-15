@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="https://fav.farm/💪" />
 </head>
-<body>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
     <nav id="navbar" style="background: var(--dark); position: relative;">
         <div class="logo">Fit<span class="highlight">Fuel</span></div>
         <ul class="nav-links">
@@ -17,25 +17,32 @@
         </ul>
     </nav>
 
-    <div class="container section-padding">
-        <h1 style="text-align: center; margin-bottom: 40px; font-size: 2.5rem;">Consejos y Ciencia</h1>
-        
-        <div class="grid-recipes">
-            <article class="card-recipe reveal">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500" alt="Ventana Anabólica">
-                    <span class="tag">Blog</span>
-                </div>
-                <div class="card-info">
-                    <h3>La Ventana Anabólica</h3>
-                    <p>Mitos y verdades sobre el timing nutricional.</p>
-                    <a href="ventana-anabolica.html" class="btn-card">Leer más</a>
-                </div>
-            </article>
-        </div>
-    </div>
+    <main style="flex: 1;">
+        <div class="container section-padding">
+            <nav style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-gray);">
+                <a href="../index.html">Inicio</a> > Consejos
+            </nav>
 
-    <footer>
+            <h1 style="text-align: center; margin-bottom: 20px; font-size: 2.5rem;">Consejos y Ciencia</h1>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 50px auto; color: var(--text-gray);">Aprende a optimizar tus resultados con artículos basados en evidencia científica.</p>
+            
+            <div class="grid-recipes">
+                <article class="card-recipe reveal visible">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500" alt="Ventana Anabólica">
+                        <span class="tag">Ciencia</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>La Ventana Anabólica</h3>
+                        <p>¿Es mito o realidad que debes comer en 30 minutos?</p>
+                        <a href="ventana-anabolica.html" class="btn-card">Leer artículo →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: auto;">
         <p>© 2025 FitFuel Project. Optimizado para Google Search Console.</p>
     </footer>
 
